@@ -1,0 +1,8 @@
+pack: ai
+recommendations:
+  - evaluation datasets and regression checks
+  - prompt injection and tool-output trust boundaries
+  - structured output validation
+  - latency, cost, and fallback handling
+selection_rule: Use when model behavior affects the product.
+status: guidance-only

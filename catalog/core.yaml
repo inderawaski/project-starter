@@ -1,0 +1,31 @@
+# Curated recommendations. URLs and names should be checked at install time.
+# This catalog is advisory; not a remote executable lockfile.
+skills:
+  - id: project-structure
+    source: local
+    path: skills/project-structure
+    status: maintained-here
+    required_in_starter: true
+  - id: systematic-debugging
+    source: https://github.com/obra/superpowers
+    upstream_skill: systematic-debugging
+    status: recommended-upstream
+    required_in_starter: true
+    license_check: required-at-install
+  - id: testing-strategy
+    source: https://github.com/addyosmani/agent-skills
+    upstream_skill: test-driven-development
+    status: adaptation-needed
+    required_in_starter: true
+    note: Do not mandate strict test-first development; use as guidance.
+  - id: verification-before-completion
+    source: https://github.com/obra/superpowers
+    upstream_skill: verification-before-completion
+    status: recommended-upstream
+    required_in_starter: true
+  - id: code-review
+    source: https://github.com/addyosmani/agent-skills
+    upstream_skill: code-review-and-quality
+    status: review-before-adoption
+    required_in_starter: true
+    note: Available by default; invoke selectively.

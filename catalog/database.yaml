@@ -1,0 +1,8 @@
+pack: database
+recommendations:
+  - schema and migration safety
+  - transaction consistency, idempotency, and retries
+  - query planning and indexing
+  - backup and rollback considerations
+selection_rule: Strongly consider when schema or transactional behavior is significant.
+status: guidance-only

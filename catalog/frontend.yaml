@@ -1,0 +1,8 @@
+pack: frontend
+recommendations:
+  - accessibility and keyboard navigation guidance
+  - browser-based interaction and responsive testing
+  - design-system and token conventions
+  - frontend UI quality review
+selection_rule: Add only when the project has a real UI surface.
+status: guidance-only
