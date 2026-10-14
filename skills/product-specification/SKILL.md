@@ -7,6 +7,12 @@ description: Interview a user about a rough product idea, confirm a concise beha
 
 Use when the user brings a rough idea, draft spec, feature request, or wants requirements clarified. This skill is independent of the code repository, but may inspect repository context if available and relevant.
 
+## Interviewing dependency
+
+Use Addy Osmani's upstream `interview-me` skill as the interviewing foundation when it is installed in the same runtime. It provides focused, conversational, one-question-at-a-time discovery. This skill owns the product-specific scope, sufficient-discovery threshold, approval boundary, and authoring contract below. Do not substitute a different upstream end-to-end specification workflow.
+
+Some runtimes do not reliably load one skill from another. In that case, use the concise fallback in `references/interviewing.md`; it captures only the interview behaviors needed here and does not attempt to reproduce the upstream skill. Install instructions and the pinned source are in `catalog/skills.json` and `docs/getting-started.md`.
+
 ## Contract
 
 **Never publish detailed Linear tickets or documents before explicit approval of the concise behavioral review.** Interview about edge cases and acceptance criteria *before* approval, but do not dump their exhaustive detail in the review.

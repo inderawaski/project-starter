@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "starter_version": "1.0.0",
+  "installer": {
+    "package": "skills",
+    "version": "1.7.2",
+    "command": "npx"
+  },
+  "specification_dependency": {
+    "id": "interview-me",
+    "repository": "https://github.com/addyosmani/agent-skills",
+      "source_url": "https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092",
+    "revision": "0.6.12 (a06bc63b3f8b829c14b0bbf53d99fefc39d58092)",
+    "skill_path": "skills/interview-me",
+    "installer_skill": "interview-me",
+    "license": "MIT",
+    "license_checked": "2026-10-14"
+  },
+  "core": [
+    {
+      "id": "project-structure",
+      "kind": "local",
+      "path": "skills/project-structure",
+      "targets": {
+        "codex": ".agents/skills/project-structure",
+        "hermes": ".hermes/skills/project-structure"
+      },
+      "license": "MIT (this repository)",
+      "license_checked": "2026-10-14",
+      "purpose": "Domain-oriented, pragmatic architecture and project structure."
+    },
+    {
+      "id": "systematic-debugging",
+      "kind": "upstream",
+      "repository": "https://github.com/obra/superpowers",
+      "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "revision": "v7.0.0 (bb92a77741419a4ab5f06e711a283343f1ada0c3)",
+      "skill_path": "skills/systematic-debugging",
+      "installer_skill": "systematic-debugging",
+      "license": "MIT",
+      "license_checked": "2026-10-14",
+      "purpose": "Diagnose root causes systematically before applying a fix."
+    },
+    {
+      "id": "testing-strategy",
+      "kind": "local",
+      "path": "skills/testing-strategy",
+      "targets": {
+        "codex": ".agents/skills/testing-strategy",
+        "hermes": ".hermes/skills/testing-strategy"
+      },
+      "license": "MIT (this repository)",
+      "license_checked": "2026-10-14",
+      "purpose": "Choose valuable, risk-proportionate tests without mandating TDD."
+    },
+    {
+      "id": "verification-before-completion",
+      "kind": "upstream",
+      "repository": "https://github.com/obra/superpowers",
+      "source_url": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "revision": "v7.0.0 (bb92a77741419a4ab5f06e711a283343f1ada0c3)",
+      "skill_path": "skills/verification-before-completion",
+      "installer_skill": "verification-before-completion",
+      "license": "MIT",
+      "license_checked": "2026-10-14",
+      "purpose": "Require fresh evidence for completion claims."
+    },
+    {
+      "id": "code-review-and-quality",
+      "kind": "upstream",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "source_url": "https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092",
+      "revision": "0.6.12 (a06bc63b3f8b829c14b0bbf53d99fefc39d58092)",
+      "skill_path": "skills/code-review-and-quality",
+      "installer_skill": "code-review-and-quality",
+      "license": "MIT",
+      "license_checked": "2026-10-14",
+      "purpose": "Review correctness, regressions, security, architecture, and maintainability."
+    }
+  ],
+  "packs": {
+    "frontend": {
+      "when": "The project ships a browser UI, mobile UI, or another user-facing interface.",
+      "dependencies": ["A project UI framework and its existing design system, if any."],
+      "configuration": "Add the project's framework, accessibility baseline, supported browsers, and UI test commands to AGENTS.md.",
+      "limitations": ["The skill does not install or select a UI framework."],
+      "skills": [
+        {
+          "id": "frontend-ui-engineering",
+          "kind": "upstream",
+          "repository": "https://github.com/addyosmani/agent-skills",
+          "source_url": "https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092",
+          "revision": "0.6.12 (a06bc63b3f8b829c14b0bbf53d99fefc39d58092)",
+          "skill_path": "skills/frontend-ui-engineering",
+          "installer_skill": "frontend-ui-engineering",
+          "license": "MIT",
+          "license_checked": "2026-10-14",
+          "purpose": "UI implementation quality, responsive behavior, and accessibility."
+        }
+      ]
+    },
+    "backend": {
+      "when": "The project owns HTTP, RPC, event, or other service interfaces.",
+      "dependencies": ["A defined API style or existing service conventions."],
+      "configuration": "Record API compatibility policy, authentication boundaries, error format, and integration test commands in AGENTS.md.",
+      "limitations": ["Does not choose a server framework or authentication provider."],
+      "skills": [
+        {
+          "id": "api-and-interface-design",
+          "kind": "upstream",
+          "repository": "https://github.com/addyosmani/agent-skills",
+          "source_url": "https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092",
+          "revision": "0.6.12 (a06bc63b3f8b829c14b0bbf53d99fefc39d58092)",
+          "skill_path": "skills/api-and-interface-design",
+          "installer_skill": "api-and-interface-design",
+          "license": "MIT",
+          "license_checked": "2026-10-14",
+          "purpose": "Design and evolve API contracts and interfaces."
+        }
+      ]
+    },
+    "database": {
+      "when": "Schema evolution, query performance, transaction behavior, or data integrity are important to the work.",
+      "dependencies": ["PostgreSQL; the selected upstream skill is database-specific."],
+      "configuration": "Record database/version, migration tool, transaction conventions, and backup/restore commands in AGENTS.md.",
+      "limitations": ["The skill targets PostgreSQL and should not be installed for other database engines."],
+      "skills": [
+        {
+          "id": "postgres-best-practices",
+          "kind": "upstream",
+          "repository": "https://github.com/neondatabase/postgres-skills",
+          "source_url": "https://github.com/neondatabase/postgres-skills/tree/f96c51d435187e8e62ae62e26ed2aad614ea112b/skills/postgres-best-practices",
+          "revision": "f96c51d435187e8e62ae62e26ed2aad614ea112b",
+          "skill_path": "skills/postgres-best-practices",
+          "installer_skill": null,
+          "license": "Apache-2.0",
+          "license_checked": "2026-10-14",
+          "purpose": "PostgreSQL schema, indexing, query, migration, and operational guidance."
+        }
+      ]
+    },
+    "ai": {
+      "when": "Model behavior, prompts, tool use, retrieval, or generated output is part of product behavior, regardless of provider or framework.",
+      "dependencies": ["No provider or framework is required."],
+      "configuration": "Document model/provider versions, evaluation data, quality thresholds, cost/latency budgets, and tool trust boundaries in AGENTS.md.",
+      "limitations": ["Provides a decision guide, not an evaluation dataset, judge, telemetry service, or application-specific policy."],
+      "skills": [
+        {
+          "id": "ai-product-practices",
+          "kind": "local",
+          "path": "skills/ai-product-practices",
+          "targets": {
+            "codex": ".agents/skills/ai-product-practices",
+            "hermes": ".hermes/skills/ai-product-practices"
+          },
+          "license": "MIT (this repository)",
+          "license_checked": "2026-10-14",
+          "purpose": "Assess model behavior, evaluation, trust boundaries, and operations across stacks."
+        }
+      ]
+    },
+    "vercel-ai-sdk": {
+      "when": "The project uses Vercel AI SDK and needs implementation guidance for that SDK.",
+      "dependencies": ["Vercel AI SDK; install package dependencies separately when using it."],
+      "configuration": "Record the installed AI SDK version and provider-specific conventions in AGENTS.md.",
+      "limitations": ["The skill is specific to Vercel AI SDK and does not add the SDK dependency or general model-evaluation coverage."],
+      "skills": [
+        {
+          "id": "ai-sdk",
+          "kind": "upstream",
+          "repository": "https://github.com/vercel/ai",
+          "source_url": "https://raw.githubusercontent.com/vercel/ai/d14f0aaa0859c1f835329c05cbf128392f2a7633/skills/use-ai-sdk/SKILL.md",
+          "revision": "d14f0aaa0859c1f835329c05cbf128392f2a7633",
+          "skill_path": "skills/use-ai-sdk/SKILL.md",
+          "installer_skill": null,
+          "license": "Apache-2.0",
+          "license_checked": "2026-10-14",
+          "purpose": "Use the Vercel AI SDK's supported APIs and patterns."
+        }
+      ]
+    }
+  }
+}

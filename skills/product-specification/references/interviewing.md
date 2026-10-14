@@ -1,6 +1,8 @@
-# Interview guide
+# Interview fallback
 
-Ask one question at a time. Questions should resolve an actual product decision, not merely fill a template.
+Use this short fallback only when the runtime cannot load the upstream `interview-me` skill. When that dependency is available, use it as the interview method and follow the product-specific contract in `../SKILL.md`.
+
+Ask one focused question at a time. Resolve actual product decisions, not template fields.
 
 Explore selectively:
 - User/problem: who, why, expected outcome

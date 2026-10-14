@@ -1,9 +1,18 @@
 # Third-party notices
 
-No third-party skill source code is bundled in this initial version.
+This repository does not bundle upstream skill content. The initializer downloads selected skills from the original repositories through Vercel Skills CLI (`skills@1.7.2`). It records the selected source and revision in each project's `starter-skills.lock.json`.
 
-Catalog entries link to third-party projects including:
-- obra/superpowers — https://github.com/obra/superpowers
-- addyosmani/agent-skills — https://github.com/addyosmani/agent-skills
+Licenses below were checked against the listed upstream repository on 2026-10-14. The sources and skill files were reviewed at the stated revisions. Live CLI installation and runtime discovery were not exercised in this environment because GitHub network access was unavailable; the initializer's CLI behavior is covered by local tests with a simulated installer. Do not interpret source review as a runtime installation test.
 
-Their licenses and authorship remain their own. Verify licenses at the actual upstream revision before installing or redistributing. The project-structure, product-specification, and starter-maintenance skills in this repository are original compositions.
+| Skill | Upstream source and path | Reviewed revision | License | Notes |
+|---|---|---|---|---|
+| `systematic-debugging` | [obra/superpowers](https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging) | `v7.0.0`, commit `bb92a77741419a4ab5f06e711a283343f1ada0c3` | MIT | Default project skill. |
+| `verification-before-completion` | [obra/superpowers](https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion) | `v7.0.0`, commit `bb92a77741419a4ab5f06e711a283343f1ada0c3` | MIT | Default project skill. |
+| `code-review-and-quality` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092/skills/code-review-and-quality) | `0.6.12`, commit `a06bc63b3f8b829c14b0bbf53d99fefc39d58092` | MIT | Default project skill. Upstream's per-skill installation does not include repository-level supplementary checklists; the skill's own review axes remain available. Review is invoked selectively under the generated `AGENTS.md` policy. |
+| `interview-me` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092/skills/interview-me) | `0.6.12`, commit `a06bc63b3f8b829c14b0bbf53d99fefc39d58092` | MIT | Global specification dependency, installed by `scripts/install_specification.py`. |
+| `frontend-ui-engineering` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092/skills/frontend-ui-engineering) | `0.6.12`, commit `a06bc63b3f8b829c14b0bbf53d99fefc39d58092` | MIT | Optional frontend pack. |
+| `api-and-interface-design` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills/tree/a06bc63b3f8b829c14b0bbf53d99fefc39d58092/skills/api-and-interface-design) | `0.6.12`, commit `a06bc63b3f8b829c14b0bbf53d99fefc39d58092` | MIT | Optional backend pack. |
+| `postgres-best-practices` | [neondatabase/postgres-skills](https://github.com/neondatabase/postgres-skills/tree/f96c51d435187e8e62ae62e26ed2aad614ea112b/skills/postgres-best-practices) | `f96c51d435187e8e62ae62e26ed2aad614ea112b` | Apache-2.0 | Optional PostgreSQL pack. |
+| `ai-sdk` | [vercel/ai](https://github.com/vercel/ai/tree/d14f0aaa0859c1f835329c05cbf128392f2a7633/skills/use-ai-sdk) | `d14f0aaa0859c1f835329c05cbf128392f2a7633` | Apache-2.0 | Optional `vercel-ai-sdk` pack; installed from the exact raw `SKILL.md` URL. |
+
+No upstream skill is modified or represented as an original skill. The local `project-structure`, `testing-strategy`, `ai-product-practices`, `product-specification`, and `starter-maintenance` skills are original compositions maintained here under this repository's MIT license. `product-specification` is a thin workflow layer that uses the separately installed upstream `interview-me` skill when the runtime can compose skills, and includes a small fallback otherwise.

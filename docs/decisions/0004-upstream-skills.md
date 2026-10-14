@@ -1,6 +1,6 @@
 # ADR-0004: Reference upstream skills by default
 
-- Status: Accepted
+- Status: Superseded by [ADR-0005](0005-pinned-skill-installation.md)
 - Date: 2026-10-14
 
 ## Context

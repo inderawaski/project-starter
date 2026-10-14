@@ -1,8 +1,0 @@
-pack: backend
-recommendations:
-  - API contract and compatibility practices
-  - authentication and authorization review
-  - integration testing and failure-mode handling
-  - observability and operational debugging
-selection_rule: Prefer concrete guidance matched to the chosen stack.
-status: guidance-only

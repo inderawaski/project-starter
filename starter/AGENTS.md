@@ -14,7 +14,7 @@
 - Follow existing patterns unless they cause a concrete problem.
 - Organize primarily by business domain, with responsibility separation within each domain.
 - Avoid speculative abstractions and unrelated refactoring.
-- See `.agents/references/architecture-principles.md` and `.agents/skills/project-structure/SKILL.md`.
+- See `.agents/references/architecture-principles.md` and the installed `project-structure` skill (`.agents/skills/` in Codex or `.hermes/skills/` in Hermes).
 
 ## Request modes
 - **Discussion:** Answer and inspect as needed; do not edit code unless asked.
@@ -28,9 +28,10 @@
 - Do not perform destructive actions, deploy, publish, or change external tickets without explicit authorization.
 
 ## Quality and completion
-- Use relevant skills for architecture, debugging, testing, verification, and review.
+- The starter provides skills for architecture, debugging, testing, verification, and review. Use each when the task calls for it; availability does not mean every skill must be invoked on every change.
+- For failures, use systematic debugging to find the cause before changing code. Choose tests by observable behavior and risk; test-first work is useful when it clarifies behavior or guards a regression, but is not mandatory.
 - Run relevant tests, lint, type checks, and build commands where available; do not claim unrun checks passed.
-- Review significant changes for correctness, regressions, and security.
+- Use the code-review skill when a review is requested or a change is consequential, broad, or security-sensitive. Tiny changes need a proportionate self-check, not a separate review stage or reviewer agent.
 - Report changed behavior, checks run, limitations, and unresolved issues.
 
 ## Project-specific rules

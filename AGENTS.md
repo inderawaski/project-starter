@@ -14,11 +14,11 @@ This repository is an **agent-friendly project starter library**, not an applica
 ## Request modes
 
 - **Discussion:** Explore, inspect, and recommend. Do not change files unless explicitly asked.
-- **Maintenance:** Make requested edits to the starter, skills, catalog, scripts, or docs.
+- **Maintenance:** Make requested edits to the starter, skills, catalog, scripts, or docs. Preserve the user's reason for the change as well as the requested outcome.
 - **New policy/architecture:** Discuss material tradeoffs first; use `skills/starter-maintenance/SKILL.md`.
 - **Bug fix:** Investigate and fix focused defects; verify affected behavior.
 
-If the user's request is unclear or a change would have material consequences, ask focused questions (one at a time). For low-impact details, make a reasonable assumption and state it.
+If a consequential choice remains unclear, ask focused questions one at a time and propose a concise change before implementation when policy agreement is still needed. Use decisions already stated in the request or accepted ADRs; do not ask users to repeat them. For low-impact details, make a reasonable assumption and state it. Trivial maintenance does not need an interview or ADR.
 
 ## Before changing anything
 
@@ -47,5 +47,6 @@ Run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests -v`
 - `skills/starter-maintenance/SKILL.md` — significant changes to this repository.
 - `skills/product-specification/SKILL.md` — upstream product discovery, review, and Linear authoring.
 - `skills/project-structure/SKILL.md` — generic architecture guidance for downstream projects.
+- `skills/testing-strategy/SKILL.md` — choose focused, proportionate tests for repository code changes.
 
 Never treat discussion as permission to edit, publish, push, or create external tickets.
